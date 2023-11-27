@@ -1,0 +1,136 @@
+* {
+    box-sizing: border-box;
+    -webkit-overflow-scrolling: touch;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /*目次部分*/
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 64px;
+    background: #fff ;
+    box-shadow: 0 2px 8px rgba(0,0,0,.3);
+    padding: 8px;
+  }
+
+  .imgInstance{
+    margin: auto 20px;
+    width: 60px;
+    height:  40px;
+    background-color: aqua;
+  }
+  
+  header > ul {
+    display: flex;
+    list-style: none; /* 行頭の箇条書き記号を消す. */
+    margin: 0;
+    padding: 0;
+    height: 48px;
+    cursor: default; /* マウスカーソルを文字選択から通常の矢印に変更. */
+  }
+  
+  header > ul > li {
+    position: relative;
+    padding: 0 6px;
+  }
+  header > ul > li:first-child {
+    padding-left: 0;
+  }
+  header > ul > li:last-child {
+    padding-right: 0;
+  }
+  
+  header > ul > li > span {
+    display: inline-block;
+    height: 36px;
+    line-height: 36px;
+    font-size: 20px;
+    padding: 0 12px;
+    margin: 6px 0;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+  
+  header > ul > li > ul {
+    height: 0; /* 子ページ一覧は高さを 0 にして非表示. */
+    overflow: hidden; /* はみ出した分を非表示. */
+  }
+
+  /*カテゴリ名にホバーした時に背景色にハイライトを付ける*/
+  header > ul > li:hover > span {
+    background-color: rgba(0,0,0,.075);
+  }
+
+  header > ul > li:hover > ul {
+    height: auto;
+    padding: 6px 0;
+  }
+
+  header > ul > li > ul {
+    list-style: none;
+    padding: 0;
+    height: 0; /* 子ページ一覧は高さを 0 にして非表示. */
+    overflow: hidden; /* はみ出した分を非表示. */
+    background-color: #fff ;
+    box-shadow: 0 4px 8px rgba(0,0,0,.3);
+    border-radius: 4px;
+  }
+  
+  header > ul > li > ul > li,      /* <- <li>~~~</li>        に対応. */
+  header > ul > li > ul > a > li { /* <- <a><li>~~~</li></a> に対応. */
+    cursor: pointer; /* マウスカーソルを指の形に変更. */
+    height: 32px;
+    line-height: 20px;
+    padding: 6px 12px;
+    font-size: 18px;
+    white-space: nowrap; /* 長いテキストの自動改行を禁止. */
+  }
+  header > ul > li > ul > li:hover,      /* <- <li>~~~</li>        に対応. */
+  header > ul > li > ul > a > li:hover { /* <- <a><li>~~~</li></a> に対応. */
+    background-color: rgba(0,0,0,.075);
+  }
+  
+  header > ul > li > ul > a {
+    text-decoration: none; /* <a> 要素の下線を削除. */
+    color: inherit; /* リンクテキストの色を通常テキストと同じにする. */
+  }
+
+  header > ul > li {
+    position: relative; /* relative は通常の位置を基準にする. */
+    padding: 0 6px;
+  }
+  
+  header > ul > li > ul {
+    position: absolute; /* <-　absolute は祖先要素のうち position が static (初期値) 以外に設定されている要素の左上を基準にする. この場合親要素の header > ul > li の左上が基準となる. */
+    top: 42px; /* <- header > ul > li の左上から, margin-top の 6px と span の高さの合計 42px だけ下にずらす. つまりheader > ul > li　> span の底辺とこの ul の上辺が接する. */
+    list-style: none;
+    padding: 0;
+    height: 0;
+    overflow: hidden;
+    background-color: #fff ;
+    box-shadow: 0 4px 8px  rgba(0,0,0,.3);
+    border-radius: 4px;
+  }
+
+  a{
+    text-decoration: none;
+    color: inherit;
+  }
+
+/*記事部分*/
+article{
+  margin-top: 64px;
+}
+
+h2{
+  text-align: center;
+  font-size: 40px;
+  text-decoration: underline;
+  text-decoration-color: aqua;
+  margin: 0 20px 20px 20px;
+  padding: 20px;
+}
